@@ -1,0 +1,860 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 12px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+font-size: 10px;
+}
+</style>
+
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 12px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+
+<style>
+.collapsible1 {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 12px;
+}
+
+.active, .collapsible1:hover {
+  background-color: #555;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+
+
+
+<style>
+/* THIS STYLE PART IS FOR THE BUTTONS FOR DIRECTION 1*/
+
+.button6 {
+  
+  border: none;
+  background-color: #0E332B;
+  color: white;
+  padding: 14px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
+.button1 {font-size: 10px; background-color: #4CAF50; /* Green */}
+
+.button3 {font-size: 16px;}
+.button4 {font-size: 20px;}
+.button5 {font-size: 24px;}
+
+
+
+</style>
+
+<script>
+var clicks = 0;
+var clicks2 = 0;
+var clicks3 = 0;
+var clicks_taxi=0;
+var clicks_taxi2=0;
+var clicks_taxi3=0;
+var clicks_puj=0;
+var clicks_puj2=0;
+var clicks_puj3=0;     
+clicks_container_van=0;
+clicks_container_van2=0;
+clicks_container_van3=0;
+clicks_trucks=0;
+clicks_trucks2=0;
+clicks_trucks3=0;
+clicks_buses=0;
+clicks_buses2=0;
+clicks_buses3=0;
+clicks_motorcycle=0;
+clicks_motorcycle2=0;
+clicks_motorcycle3=0;
+clicks_tricycle=0;
+clicks_tricycle2=0;
+clicks_tricycle3=0;
+
+function add_private(){ clicks += 1; document.getElementById("private").innerHTML = clicks;}
+function add_private2(){ clicks2 += 1; document.getElementById("private2").innerHTML = clicks2;}
+function add_private3(){ clicks3 += 1; document.getElementById("private3").innerHTML = clicks3;}
+function minus_private(){clicks -= 1; document.getElementById("private").innerHTML = clicks;}
+function minus_private2(){clicks2 -= 1; document.getElementById("private2").innerHTML = clicks2;}
+function minus_private3(){clicks3 -= 1; document.getElementById("private3").innerHTML = clicks3;}
+
+function add_taxi(){ clicks_taxi += 1; document.getElementById("taxi").innerHTML = clicks_taxi;}
+function minus_taxi(){clicks_taxi -= 1; document.getElementById("taxi").innerHTML = clicks_taxi;}
+function add_taxi2(){ clicks_taxi2 += 1; document.getElementById("taxi2").innerHTML = clicks_taxi2;}
+function minus_taxi2(){clicks_taxi2 -= 1; document.getElementById("taxi2").innerHTML = clicks_taxi2;}
+function add_taxi3(){ clicks_taxi3 += 1; document.getElementById("taxi3").innerHTML = clicks_taxi3;}
+function minus_taxi3(){clicks_taxi3 -= 1; document.getElementById("taxi3").innerHTML = clicks_taxi3;}
+
+function add_puj(){ clicks_puj += 1; document.getElementById("puj").innerHTML = clicks_puj;}
+function minus_puj(){clicks_puj -= 1; document.getElementById("puj").innerHTML = clicks_puj;}
+function add_puj2(){ clicks_puj2 += 1; document.getElementById("puj2").innerHTML = clicks_puj2;}
+function minus_puj2(){clicks_puj2 -= 1; document.getElementById("puj2").innerHTML = clicks_puj2;}
+function add_puj3(){ clicks_puj3 += 1; document.getElementById("puj3").innerHTML = clicks_puj3;}
+function minus_puj3(){clicks_puj3 -= 1; document.getElementById("puj3").innerHTML = clicks_puj3;}
+
+function add_container_van(){ clicks_container_van += 1; document.getElementById("container_van").innerHTML = clicks_container_van;}
+function minus_container_van(){clicks_container_van -= 1; document.getElementById("container_van").innerHTML = clicks_container_van;}
+function add_container_van2(){ clicks_container_van2 += 1; document.getElementById("container_van2").innerHTML = clicks_container_van2;}
+function minus_container_van2(){clicks_container_van2 -= 1; document.getElementById("container_van2").innerHTML = clicks_container_van2;}
+function add_container_van3(){ clicks_container_van3 += 1; document.getElementById("container_van3").innerHTML = clicks_container_van3;}
+function minus_container_van3(){clicks_container_van3 -= 1; document.getElementById("container_van3").innerHTML = clicks_container_van3;}
+
+function add_trucks(){ clicks_trucks += 1; document.getElementById("trucks").innerHTML = clicks_trucks;}
+function minus_trucks(){clicks_trucks -= 1; document.getElementById("trucks").innerHTML = clicks_trucks;}
+function add_trucks2(){ clicks_trucks2 += 1; document.getElementById("trucks2").innerHTML = clicks_trucks2;}
+function minus_trucks2(){clicks_trucks2 -= 1; document.getElementById("trucks2").innerHTML = clicks_trucks2;}
+function add_trucks3(){ clicks_trucks3 += 1; document.getElementById("trucks3").innerHTML = clicks_trucks3;}
+function minus_trucks3(){clicks_trucks3 -= 1; document.getElementById("trucks3").innerHTML = clicks_trucks3;}
+
+
+function add_buses(){ clicks_buses += 1; document.getElementById("buses").innerHTML = clicks_buses;}
+function minus_buses(){clicks_buses -= 1; document.getElementById("buses").innerHTML = clicks_buses;}
+function add_buses2(){ clicks_buses2 += 1; document.getElementById("buses2").innerHTML = clicks_buses2;}
+function minus_buses2(){clicks_buses2 -= 1; document.getElementById("buses2").innerHTML = clicks_buses2;}
+function add_buses3(){ clicks_buses3 += 1; document.getElementById("buses3").innerHTML = clicks_buses3;}
+function minus_buses3(){clicks_buses3 -= 1; document.getElementById("buses3").innerHTML = clicks_buses3;}
+
+
+
+function add_motorcycle(){ clicks_motorcycle += 1; document.getElementById("motorcycle").innerHTML = clicks_motorcycle;}
+function minus_motorcycle(){clicks_motorcycle -= 1; document.getElementById("motorcycle").innerHTML = clicks_motorcycle;}
+function add_motorcycle2(){ clicks_motorcycle2 += 1; document.getElementById("motorcycle2").innerHTML = clicks_motorcycle2;}
+function minus_motorcycle2(){clicks_motorcycle2 -= 1; document.getElementById("motorcycle2").innerHTML = clicks_motorcycle2;}
+function add_motorcycle3(){ clicks_motorcycle3 += 1; document.getElementById("motorcycle3").innerHTML = clicks_motorcycle3;}
+function minus_motorcycle3(){clicks_motorcycle3 -= 1; document.getElementById("motorcycle3").innerHTML = clicks_motorcycle3;}
+
+function add_tricycle(){ clicks_tricycle += 1; document.getElementById("tricycle").innerHTML = clicks_tricycle;}
+function minus_tricycle(){clicks_tricycle -= 1; document.getElementById("tricycle").innerHTML = clicks_tricycle;}
+function add_tricycle2(){ clicks_tricycle2 += 1; document.getElementById("tricycle2").innerHTML = clicks_tricycle2;}
+function minus_tricycle2(){clicks_tricycle2 -= 1; document.getElementById("tricycle2").innerHTML = clicks_tricycle2;}
+function add_tricycle3(){ clicks_tricycle3 += 1; document.getElementById("tricycle3").innerHTML = clicks_tricycle3;}
+function minus_tricycle3(){clicks_tricycle3 -= 1; document.getElementById("tricycle3").innerHTML = clicks_tricycle3;}
+
+
+</script>
+
+
+<script>
+
+function addRow() {
+var date_holder= new Date()
+
+
+var min_ind= date_holder.getMinutes();
+
+if(min_ind<10){
+
+minute="0"+min_ind;
+}
+
+if(min_ind>10){
+
+minute= min_ind;
+}
+
+
+
+dt_dir =date_holder.getMonth() + 1+ "/" + date_holder.getDate() + "/" + date_holder.getFullYear();
+
+
+tm_dir = date_holder.getHours()+":"+minute;
+         
+//var myName = document.getElementById("name");
+// var age = document.getElementById("age");
+
+
+var table = document.getElementById("dir_1");
+var rowCount = table.rows.length;
+var row = table.insertRow(rowCount);
+var tbl_fr1 = document.getElementById("fr1");
+var tbl_to1 = document.getElementById("to1");
+var tbl_fr2 = document.getElementById("fr2");
+var tbl_to2 = document.getElementById("to2");
+var tbl_fr3 = document.getElementById("fr3");
+var tbl_to3 = document.getElementById("to3");
+
+
+
+
+
+
+    
+    //row.insertCell(0).innerHTML= myName.value;
+    //row.insertCell(1).innerHTML= age.value;
+
+row.insertCell(0).innerHTML= dt_dir;
+row.insertCell(1).innerHTML= tm_dir;
+row.insertCell(2).innerHTML= tbl_fr1.value;
+row.insertCell(3).innerHTML= tbl_to1.value;
+row.insertCell(4).innerHTML= clicks;
+document.getElementById("private").innerHTML="";
+row.insertCell(5).innerHTML= clicks_motorcycle;
+document.getElementById("motorcycle").innerHTML="";
+row.insertCell(6).innerHTML= clicks_tricycle;
+document.getElementById("tricycle").innerHTML="";
+row.insertCell(7).innerHTML= clicks_taxi;
+document.getElementById("taxi").innerHTML="";
+row.insertCell(8).innerHTML= clicks_puj;
+document.getElementById("puj").innerHTML="";
+row.insertCell(9).innerHTML= clicks_container_van;
+document.getElementById("container_van").innerHTML="";
+row.insertCell(10).innerHTML= clicks_trucks;
+document.getElementById("trucks").innerHTML="";
+row.insertCell(11).innerHTML= clicks_buses;
+document.getElementById("buses").innerHTML="";
+
+
+
+add_row2();
+add_row3();
+
+
+
+   // document.getElementById("name").value='';
+    //document.getElementById("age").value='';
+ 
+}
+
+
+
+function add_row2(){
+
+var table = document.getElementById("dir_1");
+var rowCount = table.rows.length;
+var row = table.insertRow(rowCount);
+var tbl_fr1 = document.getElementById("fr1");
+var tbl_to1 = document.getElementById("to1");
+var tbl_fr2 = document.getElementById("fr2");
+var tbl_to2 = document.getElementById("to2");
+var tbl_fr3 = document.getElementById("fr3");
+var tbl_to3 = document.getElementById("to3");
+
+
+row.insertCell(0).innerHTML= dt_dir;
+row.insertCell(1).innerHTML= tm_dir;
+row.insertCell(2).innerHTML= tbl_fr2.value;
+row.insertCell(3).innerHTML= tbl_to2.value;
+row.insertCell(4).innerHTML= clicks2;
+document.getElementById("private2").innerHTML="";
+row.insertCell(5).innerHTML= clicks_motorcycle2;
+document.getElementById("motorcycle2").innerHTML="";
+row.insertCell(6).innerHTML= clicks_tricycle2;
+document.getElementById("tricycle2").innerHTML="";
+row.insertCell(7).innerHTML= clicks_taxi2;
+document.getElementById("taxi2").innerHTML="";
+row.insertCell(8).innerHTML= clicks_puj2;
+document.getElementById("puj2").innerHTML="";
+row.insertCell(9).innerHTML= clicks_container_van2;
+document.getElementById("container_van2").innerHTML="";
+row.insertCell(10).innerHTML= clicks_trucks2;
+document.getElementById("trucks2").innerHTML="";
+row.insertCell(11).innerHTML= clicks_buses2;
+document.getElementById("buses2").innerHTML="";
+
+}
+
+
+
+function add_row3(){
+
+var table = document.getElementById("dir_1");
+var rowCount = table.rows.length;
+var row = table.insertRow(rowCount);
+var tbl_fr1 = document.getElementById("fr1");
+var tbl_to1 = document.getElementById("to1");
+var tbl_fr2 = document.getElementById("fr2");
+var tbl_to2 = document.getElementById("to2");
+var tbl_fr3 = document.getElementById("fr3");
+var tbl_to3 = document.getElementById("to3");
+
+
+row.insertCell(0).innerHTML= dt_dir;
+row.insertCell(1).innerHTML= tm_dir;
+row.insertCell(2).innerHTML= tbl_fr3.value;
+row.insertCell(3).innerHTML= tbl_to3.value;
+row.insertCell(4).innerHTML= clicks3;
+document.getElementById("private3").innerHTML="";
+row.insertCell(5).innerHTML= clicks_motorcycle3;
+document.getElementById("motorcycle3").innerHTML="";
+row.insertCell(6).innerHTML= clicks_tricycle3;
+document.getElementById("tricycle3").innerHTML="";
+row.insertCell(7).innerHTML= clicks_taxi3;
+document.getElementById("taxi3").innerHTML="";
+row.insertCell(8).innerHTML= clicks_puj3;
+document.getElementById("puj3").innerHTML="";
+row.insertCell(9).innerHTML= clicks_container_van3;
+document.getElementById("container_van3").innerHTML="";
+row.insertCell(10).innerHTML= clicks_trucks3;
+document.getElementById("trucks3").innerHTML="";
+row.insertCell(11).innerHTML= clicks_buses3;
+document.getElementById("buses3").innerHTML="";
+
+
+clicks = 0;
+clicks2 = 0;
+clicks3 = 0;
+clicks_taxi=0;
+clicks_taxi2=0;
+clicks_taxi3=0;
+clicks_puj=0;
+clicks_puj2=0; 
+clicks_puj3=0;   
+clicks_container_van=0;
+clicks_container_van2=0;
+clicks_container_van3=0;
+clicks_trucks=0;
+clicks_trucks2=0;
+clicks_trucks3=0;
+clicks_buses=0;
+clicks_buses2=0;
+clicks_buses3=0;
+clicks_motorcycle=0;
+clicks_motorcycle2=0;
+clicks_motorcycle3=0;
+clicks_tricycle=0;
+clicks_tricycle2=0;
+clicks_tricycle3=0;
+}
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+<h1>VEHICLE COUNTER</h1>
+
+<script>
+
+function display_ct5() {
+var x = new Date()
+var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+
+var x1=x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getFullYear(); 
+x1 = x1 + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds() + ":" + ampm;
+document.getElementById('ct5').innerHTML = x1;
+display_c5();
+
+min_Indicator=x.getMinutes();
+min_Indicator=min_Indicator%15;
+
+sec_Indicator=x.getSeconds();
+
+
+
+document.getElementById('min_Indicator_Display').innerHTML = min_Indicator;
+document.getElementById('sec_Indicator_Display').innerHTML = sec_Indicator;
+
+}
+
+function display_c5(){
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('display_ct5()',refresh)
+}
+display_c5()
+</script>
+<span id='ct5'></span>
+<br>
+<span id='min_Indicator_Display'></span>
+<span id='sec_Indicator_Display'></span>
+<BR>
+<button type="button" class="collapsible1">COUNTER</button>
+<div class="content">
+
+<div class="tab">
+  <button class="tablinks" onclick="opentab(event, 'tab1')">DIR 1</button>
+  <button class="tablinks" onclick="opentab(event, 'tab2')">DIR 2</button>
+<button class="tablinks" onclick="opentab(event, 'tab3')">DIR 3</button>
+</div>
+
+<script>
+function opentab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+
+
+
+
+
+
+
+
+<div id="tab1" class="tabcontent">
+
+<table style="float:left">
+
+
+
+<tr>
+<td><b>FROM: </b><BR><input type="text" id="fr1" col=3>
+</td>
+</tr>
+
+<tr>
+
+<td><b> TO:</b><BR><input type="text" id="to1" col=3></td>
+</tr>
+
+
+
+
+<tr>
+<td><b>VEHICLE TYPE  </B></td>
+<td> </td>
+<td> </td>
+<td> COUNT </td>
+</tr>
+<tr>
+<td><b>PVT/CAR </B></td>
+<td><button onclick="add_private()" class="button4">(+)</button> </td>
+<td> <button onclick="minus_private()" class="button4">(-)</button></td>
+<td><center> <b id="private"></b></center> </td>
+</tr>
+
+<tr>
+<td><b>MOTOR</B></td>
+<td><button onclick="add_motorcycle()" class="button4">(+)</button> </td>
+<td> <button onclick="minus_motorcycle()" class="button4">(-)</button></td>
+<td><center> <b id="motorcycle"></b></center> </td>
+</tr>
+
+<tr>
+<td><b>TRICYCLE</B></td>
+<td><button onclick="add_tricycle()" class="button4">(+)</button> </td>
+<td> <button onclick="minus_tricycle()" class="button4">(-)</button></td>
+<td><center> <b id="tricycle"></b></center> </td>
+</tr>
+
+
+<tr>
+<td><B>TAXI</B></td>
+<td><button onclick="add_taxi()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_taxi()" class="button4">(-)</button></td>
+<td><center><b id="taxi"></b></center></td>
+</tr>
+
+<tr>
+<td><B>PUJ</B></td>
+<td><button onclick="add_puj()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_puj()" class="button4">(-)</button></td>
+<td><center><b id="puj"></b></center></td>
+</tr>
+
+<tr>
+<td><B>CNTR VAN </B></td>
+<td><button onclick="add_container_van()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_container_van()" class="button4">(-)</button></td>
+<td><center><b id="container_van"></b></center></td>
+</tr>
+
+<tr>
+<td><B>TRUCKS</B></td>
+<td><button onclick="add_trucks()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_trucks()" class="button4">(-)</button></td>
+<td><center><b id="trucks"></b></center></td>
+</tr>
+
+<tr>
+<td><B>BUSES</B></td>
+<td><button onclick="add_buses()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_buses()" class="button4">(-)</button></td>
+<td><center><b id="buses"></b></center></td>
+</tr>
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="tab2" class="tabcontent">
+  <table style="float:left">
+
+
+<tr>
+<td><b>FROM: </b><BR><input type="text" id="fr2" col=3>
+</td>
+</tr>
+
+<tr>
+
+<td><b> TO:</b><BR><input type="text" id="to2" col=3></td>
+</tr>
+
+
+
+
+<tr>
+<td><b>VEHICLE TYPE  </B></td>
+<td> </td>
+<td> </td>
+<td> COUNT </td>
+</tr>
+<tr>
+<td><b>PVT/CAR </B></td>
+<td><button onclick="add_private2()" class="button4">(+)</button> </td>
+<td> <button onclick="minus_private2()" class="button4">(-)</button></td>
+<td><center> <b id="private2"></b></center> </td>
+</tr>
+
+<tr>
+<td><b>MOTOR</B></td>
+<td><button onclick="add_motorcycle2()" class="button4">(+)</button> </td>
+<td> <button onclick="minus_motorcycle2()" class="button4">(-)</button></td>
+<td><center> <b id="motorcycle2"></b></center> </td>
+</tr>
+
+<tr>
+<td><b>TRICYCLE</B></td>
+<td><button onclick="add_tricycle2()" class="button4">(+)</button> </td>
+<td> <button onclick="minus_tricycle2()" class="button4">(-)</button></td>
+<td><center> <b id="tricycle2"></b></center> </td>
+</tr>
+
+
+<tr>
+<td><B>TAXI</B></td>
+<td><button onclick="add_taxi2()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_taxi2()" class="button4">(-)</button></td>
+<td><center><b id="taxi2"></b></center></td>
+</tr>
+
+<tr>
+<td><B>PUJ</B></td>
+<td><button onclick="add_puj2()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_puj2()" class="button4">(-)</button></td>
+<td><center><b id="puj2"></b></center></td>
+</tr>
+
+<tr>
+<td><B>CNTR VAN </B></td>
+<td><button onclick="add_container_van2()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_container_van2()" class="button4">(-)</button></td>
+<td><center><b id="container_van2"></b></center></td>
+</tr>
+
+<tr>
+<td><B>TRUCKS</B></td>
+<td><button onclick="add_trucks2()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_trucks2()" class="button4">(-)</button></td>
+<td><center><b id="trucks2"></b></center></td>
+</tr>
+
+<tr>
+<td><B>BUSES</B></td>
+<td><button onclick="add_buses2()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_buses2()" class="button4">(-)</button></td>
+<td><center><b id="buses2"></b></center></td>
+</tr>
+</table>
+
+</div>
+
+
+
+<div id="tab3" class="tabcontent">
+  <table style="float:left">
+
+
+<tr>
+<td><b>FROM: </b><BR><input type="text" id="fr3" col=3>
+</td>
+</tr>
+
+<tr>
+
+<td><b> TO:</b><BR><input type="text" id="to3" col=3></td>
+</tr>
+
+
+
+
+<tr>
+<td><b>VEHICLE TYPE  </B></td>
+<td> </td>
+<td> </td>
+<td> COUNT </td>
+</tr>
+<tr>
+<td><b>PVT/CAR </B></td>
+<td><button onclick="add_private3()" class="button4">(+)</button> </td>
+<td> <button onclick="minus_private3()" class="button4">(-)</button></td>
+<td><center> <b id="private3"></b></center> </td>
+</tr>
+
+<tr>
+<td><b>MOTOR</B></td>
+<td><button onclick="add_motorcycle3()" class="button4">(+)</button> </td>
+<td> <button onclick="minus_motorcycle3()" class="button4">(-)</button></td>
+<td><center> <b id="motorcycle3"></b></center> </td>
+</tr>
+
+<tr>
+<td><b>TRICYCLE</B></td>
+<td><button onclick="add_tricycle3()" class="button4">(+)</button> </td>
+<td> <button onclick="minus_tricycle3()" class="button4">(-)</button></td>
+<td><center> <b id="tricycle3"></b></center> </td>
+</tr>
+
+
+<tr>
+<td><B>TAXI</B></td>
+<td><button onclick="add_taxi3()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_taxi3()" class="button4">(-)</button></td>
+<td><center><b id="taxi3"></b></center></td>
+</tr>
+
+<tr>
+<td><B>PUJ</B></td>
+<td><button onclick="add_puj3()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_puj3()" class="button4">(-)</button></td>
+<td><center><b id="puj3"></b></center></td>
+</tr>
+
+<tr>
+<td><B>CNTR VAN </B></td>
+<td><button onclick="add_container_van3()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_container_van3()" class="button4">(-)</button></td>
+<td><center><b id="container_van3"></b></center></td>
+</tr>
+
+<tr>
+<td><B>TRUCKS</B></td>
+<td><button onclick="add_trucks3()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_trucks3()" class="button4">(-)</button></td>
+<td><center><b id="trucks3"></b></center></td>
+</tr>
+
+<tr>
+<td><B>BUSES</B></td>
+<td><button onclick="add_buses3()" class="button4">(+)</button>  </td>
+<td><button onclick="minus_buses3()" class="button4">(-)</button></td>
+<td><center><b id="buses3"></b></center></td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible1");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button type="button" class="collapsible">REPORT</button>
+<div class="content">
+  <table id="dir_1">
+  <tr>
+  <td>
+  DATE
+  </td>
+  <td>
+  TIME
+  </td>
+</td>
+  <td>
+  FROM
+  </td>
+<td>
+  TO
+  </td>
+<td>
+  CAR
+  </td>
+<td>
+  MOT
+  </td>
+<td>
+  TRI
+  </td>
+<td>
+  TAX
+  </td>
+<td>
+  PUJ
+  </td>
+<td>
+  VAN
+  </td>
+<td>
+  TRU
+  </td>
+<td>
+  BUS
+  </td>
+  </tr>
+
+  </table>
+  </div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+  
+
+</div>
+<button onclick="addRow()" class="button6"> PUSH REPORT</button>
+
+</body>
+</html>
